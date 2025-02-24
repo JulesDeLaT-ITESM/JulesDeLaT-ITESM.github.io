@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  - CAN Bus Networks implementation  - Embedded Systems Programming  - PCB design for AGV Tec project- **ECU Design Engineer** (August 2022 - August 2024)  - Technical documentation and process review  - Linux distributions focus (RedHatOS, CentOS, Ubuntu)  - Development environments preparation- **Mechatronics Engineer** (Summer 2020)### Technical Experience  - Duration: Four tetramesters  - Subjects: Mathematics and Physics- **Tutor at Prepanet program**  - "An approach to engineering" for Fifth Semester students at Prepa Tec de Monterrey- **High School Professor** (August 2023 - December 2023)### Teaching Experience## Professional Experience

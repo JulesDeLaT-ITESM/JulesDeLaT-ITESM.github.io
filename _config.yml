@@ -1,0 +1,12 @@
+title: Julio Sebastián De La Trinidad Rendón
+description: >- # this means to ignore newlines until "baseurl:"
+  Mechatronics Engineer | PhD Student in Engineering Sciences | Researcher in Autonomous Mobile Robots
+theme: jekyll-theme-cayman
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://JulesDeLaT-ITESM.github.io" # the base hostname & protocol for your site
+github_username: JulesDeLaT-ITESM
+
+# Build settings
+markdown: kramdown
+include:
+  - _includes
