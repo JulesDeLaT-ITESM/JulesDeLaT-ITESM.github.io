@@ -2,44 +2,840 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
     <title>Julio Sebastián De La Trinidad Rendón | CV</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f8f9fa; /* Light background for content */
+            color: #333; 
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Container style - critical for layout */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Header content layout */
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        /* Updated header styles with new color palette */
+        .header {
+            background: #1a365d; /* Deep navy blue for header */
+            color: white;
+            padding: 2.5rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Remove gradient overlay */
+        .header::before {
+            display: none; /* Hide the gradient overlay completely */
+        }
+        
+        .particles {
+            display: none; /* Remove particles */
+        }
+        
+        .profile-image {
+            background: white;
+            box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.08), 0 5px 8px -5px rgba(0, 0, 0, 0.03);
+        }
+        
+        /* Updated profile placeholder background */
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            background: #3182ce !important; /* Medium blue */
+            color: white !important;
+            background-image: none !important;
+            border: none;
+            border-radius: 24px;
+        }
+        
+        .name {
+            font-size: 2rem !important;
+            font-weight: 700 !important;
+            color: white !important;
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            background-clip: initial !important;
+            letter-spacing: -0.5px !important;
+            line-height: 1.2 !important;
+            background-image: none !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .title-separator {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 300;
+        }
+        
+        .title {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        
+        .status {
+            background: white;
+            border: 1px solid #38a169; /* Green for status */
+            color: #38a169;
+        }
+        
+        /* Update social icons to new blue */
+        .icon {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background: #3182ce; /* Medium blue for icons */
+            color: white;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .icon:hover {
+            background: #4299e1; /* Lighter blue on hover */
+            color: white;
+            transform: translateY(-3px) rotate(8deg);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-cv {
+            background: #3182ce; /* Match icon blue */
+            border: none;
+        }
+        
+        .download-cv:hover {
+            background: #2b6cb0; /* Darker blue on hover */
+        }
+        
+        /* Navigation styles - updated blue */
+        .nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            background: white;
+            border: none;
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        
+        /* Update navigation text to blue-gray */
+        .nav-item a {
+            color: #2d3748; /* Blue-gray text */
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .nav-item a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: #3182ce; /* Medium blue background */
+            transition: all 0.3s ease;
+            opacity: 0.15;
+            z-index: -1;
+            border-radius: 8px;
+        }
+        
+        .nav-item a:hover {
+            color: #3182ce; /* Blue on hover */
+            transform: translateY(-2px);
+        }
+        
+        .nav-item a:hover::before {
+            height: 100%;
+            opacity: 0.15;
+        }
+        
+        /* Section styles */
+        .section {
+            background: white;
+        }
+        
+        /* Update heading styles */
+        h2 {
+            color: #1a365d; /* Deep navy to match header */
+            border-bottom: 2px solid #3182ce; /* Medium blue border */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 i {
+            color: #3182ce; /* Medium blue icons */
+            margin-right: 0.5rem;
+        }
+        
+        /* Update cards */
+        .project-card, .education-item, .experience-item, .activity-card, .cert-item {
+            background: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover, .education-item:hover, .experience-item:hover, .activity-card:hover, .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Status styling */
+        .status {
+            background: rgba(56, 161, 105, 0.15);
+            border: 1px solid rgba(56, 161, 105, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            color: #38a169; /* Green for status */
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .status::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #38a169; /* Green dot */
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Footer to match header */
+        footer {
+            background: #1a365d; /* Deep navy blue to match header */
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Keep the rest of your existing styles */
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            background: #4285f4 !important; /* Google blue background */
+            color: white !important; /* White emoji for contrast */
+            background-image: none !important;
+            border: none;
+            border-radius: 24px; /* Maintain rounded corners */
+        }
+        
+        .name {
+            font-size: 2rem !important;
+            font-weight: 700 !important;
+            color: white !important;
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            background-clip: initial !important;
+            letter-spacing: -0.5px !important;
+            line-height: 1.2 !important;
+            background-image: none !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .title-separator {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 300;
+        }
+        
+        .title {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        
+        .status {
+            background: white;
+            border: 1px solid #22c55e;
+            color: #22c55e;
+        }
+        
+        /* Update social icons to Google blue */
+        .icon {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background: #4285f4; /* Google blue */
+            color: white; /* White icon color */
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .icon:hover {
+            background: #5c9aff; /* Lighter blue on hover */
+            color: white;
+            transform: translateY(-3px) rotate(8deg);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-cv {
+            background: #4285f4; /* Solid blue */
+            border: none;
+        }
+        
+        .download-cv:hover {
+            background: #3367d6; /* Darker blue on hover */
+        }
+        
+        /* Navigation styles - changed to Google blue */
+        .nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            background: #4285f4; /* Google blue background */
+            border: none;
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        
+        /* Update navigation text to white for contrast */
+        .nav-item a {
+            color: white; /* White text for contrast */
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .nav-item a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: white; /* White hover effect */
+            transition: all 0.3s ease;
+            opacity: 0.15;
+            z-index: -1;
+            border-radius: 8px;
+        }
+        
+        .nav-item a:hover {
+            color: white; /* Keep white text on hover */
+            transform: translateY(-2px);
+        }
+        
+        .nav-item a:hover::before {
+            height: 100%;
+            opacity: 0.2;
+        }
+        
+        .profile-section {
+            margin-bottom: 2rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            background: #1e293b;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #64748b;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Emoji span will be the element that jumps */
+        .emoji-character {
+            display: inline-block;
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        /* Apply jump animation only to the emoji character */
+        .jump {
+            animation: jump 0.6s cubic-bezier(0.28, 0.84, 0.42, 1) both;
+        }
+        
+        @keyframes jump {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .name-title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .name-with-title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .name {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .title-separator {
+            margin: 0 0.5rem;
+            color: #64748b;
+            font-weight: 300;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-social-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .status {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            color: #4ade80; /* Brighter green for contrast */
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .status:hover {
+            background: rgba(34, 197, 94, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .status::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #4ade80;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.6; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.6; transform: scale(0.8); }
+        }
+        
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .download-cv {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            background: #4285f4; /* Solid Google blue */
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        
+        .download-cv svg {
+            margin-right: 8px;
+        }
+        
+        .download-cv:hover {
+            background: #5c9aff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+        }
+        
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+                align-items: center; /* Keep center alignment */
+            }
+            
+            .profile-section {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 0;
+                justify-content: flex-start;
+                width: auto;
+            }
+            
+            .profile-image {
+                margin-bottom: 0;
+                margin-right: 2.5rem;
+            }
+            
+            .info-section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: auto;
+                justify-content: center; /* Added to ensure vertical centering */
+            }
+            
+            .status-social-wrapper {
+                justify-content: flex-start;
+                margin-bottom: 0;
+                margin-top: 10px; /* Add spacing after name to balance layout */
+                display: flex;
+                align-items: center;
+                gap: 1rem; /* Maintain spacing between status and social-cv-container */
+            }
+            
+            .name-with-title {
+                justify-content: flex-start;
+            }
+            
+            .social-cv-container {
+                display: flex;
+                align-items: center;
+                position: static;
+                top: auto;
+            }
+        }
+        
+        /* Navigation styles */
+        .nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            background: white; /* Clean white background */
+            border: none;
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+        
+        .nav-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .nav-item a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: #4285f4; /* Solid color background */
+            transition: all 0.3s ease;
+            opacity: 0.1;
+            z-index: -1;
+            border-radius: 8px;
+        }
+        
+        .nav-item a:hover {
+            color: #4285f4; /* Blue on hover */
+            transform: translateY(-2px);
+        }
+        
+        .nav-item a:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        /* Section styles */
+        .section {
+            background: white;
+        }
+        
+        /* Update any other gradients to solid colors */
+        .project-card, .education-item, .experience-item, .activity-card, .cert-item {
+            background: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover, .education-item:hover, .experience-item:hover, .activity-card:hover, .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Keep a clean uniform look throughout */
+        h2 {
+            color: #002147; /* Oxford blue to match header */
+            border-bottom: 2px solid #4285f4; /* Google blue border */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 i {
+            color: #4285f4; /* Google blue icons */
+            margin-right: 0.5rem;
+        }
+        
+        /* Override any previous name styling to ensure solid color */
+        .name {
+            font-size: 2rem !important;
+            font-weight: 800 !important;
+            color: white !important; /* Plain white text for dark header */
+            background: none !important; /* Remove any background */
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            background-clip: initial !important;
+            letter-spacing: -0.5px !important;
+            line-height: 1.2 !important;
+            background-image: none !important;
+        }
+        
+        /* Also ensure proper title color for contrast on dark header */
+        .title-separator {
+            color: #cbd5e1 !important; /* Light gray with good contrast */
+        }
+        
+        .title {
+            color: #e2e8f0 !important; /* Light gray-blue with good contrast */
+        }
+        
+        /* Fix emoji placeholder background */
+        .profile-placeholder {
+            background: white !important; /* White background */
+            color: #4285f4 !important; /* Blue emoji */
+            background-image: none !important;
+        }
+
+        /* Footer to match header */
+        footer {
+            background: #002147;
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
+        <!-- Remove particles div or keep with display:none -->
+        <div class="particles" style="display:none">
+            <!-- No particles needed -->
+        </div>
         <div class="container">
             <div class="header-content">
-                <div class="profile-info">
-                    <div class="profile-text">
-                        <h1>Julio Sebastián De La Trinidad Rendón</h1>
-                        <h2>Mechatronics Engineer | PhD Candidate</h2>
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <div class="profile-placeholder">
+                            <span id="emoji-container" class="emoji-character">👨‍🔬</span>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="name-title-container">
+                            <div class="name-with-title">
+                                <h1 class="name">Julio Sebastián De La Trinidad Rendón</h1>
+                                <span class="title-separator">|</span>
+                                <p class="title">M.Sc. in Engineering Sciences</p>
+                            </div>
+                        </div>
+                        <div class="status-social-wrapper">
+                            <div class="status">Currently pursuing Ph.D. in Engineering Sciences</div>
+                            
+                            <!-- Social icons and CV download moved inside the status-social-wrapper -->
+                            <div class="social-cv-container">
+                                <div class="social-icons">
+                                    <!-- GitHub Icon -->
+                                    <a href="https://github.com/JulesDeLaT-ITESM" class="icon" target="_blank">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                        </svg>
+                                    </a>
+                                    <!-- LinkedIn Icon -->
+                                    <a href="https://linkedin.com/in/juliosdelatrinidadr" class="icon" target="_blank">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                            <rect x="2" y="9" width="4" height="12"></rect>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                    </a>
+                                    <!-- Email Icon -->
+                                    <a href="mailto:sebastiandelat@hotmail.com" class="icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <!-- Download CV button -->
+                                <a href="assets/cv/JulioDeLatrinidad_CV.pdf" class="download-cv" download>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    Download CV
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="cv-download">
-                    <a href="assets/cv/JulioDeLatrinidad_CV.pdf" class="cv-download-btn" download>
-                        <i class="fas fa-file-download"></i> Download CV
-                    </a>
-                </div>
+                <!-- Remove the social-cv-container from here -->
                 
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <nav class="nav" id="mainNav">
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#publications">Publications</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#education">Education</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
             </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#about">About</a></li>
+                    <li class="nav-item"><a href="#publications">Publications</a></li>
+                    <li class="nav-item"><a href="#projects">Projects</a></li>
+                    <li class="nav-item"><a href="#education">Education</a></li>
+                    <li class="nav-item"><a href="#experience">Experience</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -133,33 +929,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/ai-education.jpeg" alt="AI in Education">
-                        </div>
-                        <div class="project-content">
-                            <h3>Intelligent Experience Enhancement Systems</h3>
-                            <p>Suite of AI tools for education including Pix2Pix-based saliency mapping for slide optimization, personalized microlearning experiences, and intelligent quiz generation and improvement systems.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">GANs</span>
-                                <span class="tech-tag">LLMs</span>
-                                <span class="tech-tag">Adaptive Learning</span>
-                                <span class="tech-tag">Learning Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="side-by-side-container">
-            <section id="education" class="section half-width">
-                <div class="container">
-                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                    <div class="education-item">
-                        <div class="content">
-                            <div class="content-header">
                                 <h3>PhD in Engineering Sciences</h3>
                                 <span class="date-badge">2024 - 2028</span>
                             </div>
@@ -397,34 +1166,32 @@
     <script src="js/publications-data.js"></script>
     <script src="js/publications.js"></script>
     <script>
-        // Generate particles
         window.onload = function() {
-            const particles = document.querySelector('.particles');
-            const numParticles = 20;
+            // Updated Emoji Cycling with Smooth Jump Animation
+            const emojiContainer = document.getElementById('emoji-container');
+            const engineeringEmojis = ['👨‍🔬', '👩‍💻', '🤖', '🧠', '⚙️', '💻', '🔬', '📊', '🧪', '📡'];
+            let currentEmojiIndex = 0;
             
-            for (let i = 0; i < numParticles; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.width = `${Math.random() * 8 + 2}px`;
-                particle.style.height = particle.style.width;
-                particle.style.opacity = `${Math.random() * 0.3 + 0.1}`;
-                particle.style.animationDuration = `${Math.random() * 8 + 5}s`;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                particles.appendChild(particle);
-            }
-            
-            // Interactive effect for particles
-            document.addEventListener('mousemove', (e) => {
-                const mouseX = e.clientX / window.innerWidth;
-                const mouseY = e.clientY / window.innerHeight;
+            // Cycle through emojis with smooth jump animation
+            setInterval(() => {
+                // Apply the jump animation
+                emojiContainer.classList.add('jump');
                 
-                document.querySelectorAll('.particle').forEach(particle => {
-                    particle.style.transform = `translate(${(mouseX - 0.5) * 20}px, ${(mouseY - 0.5) * 20}px)`;
-                });
-            });
+                // Wait for animation to reach its midpoint before changing emoji
+                setTimeout(() => {
+                    // Update emoji at the animation's highest point
+                    currentEmojiIndex = (currentEmojiIndex + 1) % engineeringEmojis.length;
+                    emojiContainer.textContent = engineeringEmojis[currentEmojiIndex];
+                }, 300); // Half of the animation duration
+                
+                // Remove animation class after completion
+                setTimeout(() => {
+                    emojiContainer.classList.remove('jump');
+                }, 600); // Full animation duration
+                
+            }, 4000); // Interval between animations
         };
     </script>
 </body>
 </html>
+ 
