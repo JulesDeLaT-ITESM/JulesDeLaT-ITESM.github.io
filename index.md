@@ -1,12 +1,13 @@
 ---
-layout: home
+layout: default
 title: Home
 ---
 
-# About Me
+# Academic Profile
 
-Mechatronics Engineer and PhD student focused on Autonomous Mobile Robots and Vehicle Control. My research interests include neuromorphic computing, autonomous systems, and machine learning applications in robotics.
-
-{% include sections/experience.md %}
 {% include sections/education.md %}
-{% include sections/skills.md %}
+{% include sections/publications.md %}
+{% include sections/experience.md %}
+{% include sections/certifications.md %}
+{% include sections/service.md %}
+{% include sections/interests.md %}

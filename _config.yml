@@ -1,24 +1,14 @@
 title: Julio Sebastián De La Trinidad Rendón
-email: your.email@example.com
-description: >-
+description: >- # this means to ignore newlines until "baseurl:"
   Mechatronics Engineer | PhD Student in Engineering Sciences | Researcher in Autonomous Mobile Robots
-baseurl: ""
-url: "https://JulesDeLaT-ITESM.github.io"
-twitter_username: yourtwitter
+theme: jekyll-theme-cayman
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://JulesDeLaT-ITESM.github.io" # the base hostname & protocol for your site
 github_username: JulesDeLaT-ITESM
-linkedin_username: yourlinkedin
+linkedin_username: julio-sebastian-de-la-trinidad
+scholar_id: YOUR_GOOGLE_SCHOLAR_ID
 
 # Build settings
-remote_theme: mmacneil/devfolio
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme
-  
-header_pages:
-  - index.md
-  - research.md
-  - publications.md
-
-# Site settings
-accent_color: '#4C60E6'
-accent_image: /assets/img/sidebar-bg.jpg
+markdown: kramdown
+include:
+  - _includes

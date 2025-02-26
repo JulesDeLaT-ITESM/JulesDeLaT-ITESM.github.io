@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio Sebastián De La Trinidad Rendón | CV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <div class="profile-text">
+                        <h1>Julio Sebastián De La Trinidad Rendón</h1>
+                        <h2>Mechatronics Engineer | PhD Candidate</h2>
+                    </div>
+                </div>
+                
+                <div class="cv-download">
+                    <a href="assets/cv/JulioDeLatrinidad_CV.pdf" class="cv-download-btn" download>
+                        <i class="fas fa-file-download"></i> Download CV
+                    </a>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="nav" id="mainNav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2><i class="fas fa-user"></i> About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/profile.jpg" alt="Julio Sebastián De La Trinidad Rendón" style="max-width: 80%; margin: 0 auto;">
+                    </div>
+                    <div class="about-text">
+                        <p class="bio-intro">I am a <strong>Mechatronics Engineer</strong> with a Master's in Engineering Sciences, currently pursuing a PhD focused on Neuromorphic Control Systems for Autonomous Vehicles.</p>
+                        
+                        <p>My research interests include:</p>
+                        <ul class="bio-interests">
+                            <li><i class="fas fa-robot"></i> Autonomous Mobile Robots</li>
+                            <li><i class="fas fa-brain"></i> Neuromorphic Computing</li>
+                            <li><i class="fas fa-car"></i> Vehicle Control Systems</li>
+                            <li><i class="fas fa-laptop-code"></i> Computer Vision</li>
+                            <li><i class="fas fa-comment-dots"></i> Large Language Models</li>
+                            <li><i class="fas fa-robot"></i><i class="fas fa-microchip"></i> Embodied AI Agents</li>
+                            <li><i class="fas fa-graduation-cap"></i> AI in Education</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <div class="container">
+                <h2><i class="fas fa-book"></i> Publications</h2>
+                
+                <!-- Publications container for dynamic loading -->
+                <div id="publications-container" class="projects-grid">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2><i class="fas fa-rocket"></i> Projects</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/agv-tec.jpg" alt="AMR Tec Project">
+                        </div>
+                        <div class="project-content">
+                            <h3>AMR Tec - Autonomous Mobile Robot</h3>
+                            <p>Development of an autonomous ground vehicle for campus transportation with sensor integration and real-time navigation capabilities as we work toward full autonomy.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PCB Design</span>
+                                <span class="tech-tag">Embedded Systems</span>
+                                <span class="tech-tag">CAN Bus</span>
+                                <span class="tech-tag">Lidar</span>
+                                <span class="tech-tag">SLAM</span>
+                                <span class="tech-tag">RTK</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/neuromorphic.png" alt="Neuromorphic Controller">
+                        </div>
+                        <div class="project-content">
+                            <h3>Neuromorphic Control System</h3>
+                            <p>Bio-inspired explainable neuromorphic controller for autonomous vehicles using Izhikevich and other neural models. Currently developing a lightweight implementation to improve efficiency.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Neural Networks</span>
+                                <span class="tech-tag">Autonomous Navigation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/ar-vehicle.png" alt="Augmented Reality for Vehicles">
+                        </div>
+                        <div class="project-content">
+                            <h3>AR for Autonomous Vehicle Validation</h3>
+                            <p>Development of an augmented reality system that overlaps high-fidelity digital environments with real-world perception for testing and validation of autonomous vehicles.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Augmented Reality</span>
+                                <span class="tech-tag">Simulation</span>
+                                <span class="tech-tag">Sensor Fusion</span>
+                                <span class="tech-tag">Unity3D</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/ai-education.jpeg" alt="AI in Education">
+                        </div>
+                        <div class="project-content">
+                            <h3>Intelligent Experience Enhancement Systems</h3>
+                            <p>Suite of AI tools for education including Pix2Pix-based saliency mapping for slide optimization, personalized microlearning experiences, and intelligent quiz generation and improvement systems.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">GANs</span>
+                                <span class="tech-tag">LLMs</span>
+                                <span class="tech-tag">Adaptive Learning</span>
+                                <span class="tech-tag">Learning Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="side-by-side-container">
+            <section id="education" class="section half-width">
+                <div class="container">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <div class="content">
+                            <div class="content-header">
+                                <h3>PhD in Engineering Sciences</h3>
+                                <span class="date-badge">2024 - 2028</span>
+                            </div>
+                            <ul>
+                                <li><strong>Focus:</strong> Advanced Neuromorphic Control Systems for Autonomous Vehicles</li>
+                                <li><strong>Research Areas:</strong> Bio-inspired Computing, Autonomous Navigation, Explainable AI</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="content">
+                            <div class="content-header">
+                                <h3>Master in Engineering Sciences</h3>
+                                <span class="date-badge">2023 - 2024</span>
+                            </div>
+                            <ul>
+                                <li><strong>Focus:</strong> Autonomous Mobile Robots and Vehicle Control via Neuromorphic Algorithms</li>
+                                <li><strong>Testing:</strong> Vehicular Mixed Reality</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="content">
+                            <div class="content-header">
+                                <h3>Mechatronics Engineering</h3>
+                                <span class="date-badge">2018 - 2022</span>
+                            </div>
+                            <ul>
+                                <li><strong>Institution:</strong> Instituto Tecnológico y de Estudios Superiores de Monterrey</li>
+                                <li><strong>Scholarship:</strong> "Academic Distinction"</li>
+                                <li><strong>Graduation Honors:</strong> Honorific Mention, <strong>GPA: 94.85/100</strong></li>
+                                <li><strong>Awards:</strong> Premio Ceneval a la Excelencia - EGEL Plus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certifications" class="section half-width">
+                <div class="container">
+                    <h2><i class="fas fa-award"></i> Certifications & Skills</h2>
+                    <div class="certifications-grid">
+                        <div class="cert-item"><i class="fas fa-certificate"></i> <strong>SolidWorks Certified Professional</strong> in Mechanical Design <em>(C-LMXVT7AGP6)</em></div>
+                        <div class="cert-item"><i class="fas fa-robot"></i> <strong>Universal Robots A/S:</strong> Basic, Professional, and Application track in e-Series</div>
+                        <div class="cert-item"><i class="fas fa-brain"></i> <strong>Certified IBM Enterprise Design Thinking Practitioner</strong> and Team Essentials for AI</div>
+                        <div class="cert-item"><i class="fab fa-aws"></i> <strong>AWS Certified Pro DeepRacer</strong></div>
+                        <div class="cert-item"><i class="fab fa-microsoft"></i> <strong>Azure Machine Learning Learning Path:</strong> Build and operate machine learning solutions</div>
+                        <div class="cert-item"><i class="fas fa-certificate"></i> <strong>IBM SkillsBuild Certifications:</strong> AI Foundation, Project Management Fundamentals, Blockchain Fundamentals</div>
+                    </div>
+                    
+                    <h3 class="languages-heading">Languages</h3>
+                    <div class="languages-grid">
+                        <div class="lang-item">
+                            <span class="lang-name">English</span>
+                            <span class="lang-level">Linguaskill C1 - 180+ Score</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">German</span>
+                            <span class="lang-level">Basic</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="side-by-side-container">
+            <section id="experience" class="section half-width">
+                <div class="container">
+                    <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="content">
+                            <div class="content-header">
+                                <h3>Mechatronics Engineer</h3>
+                                <span class="date-badge">Aug 2022 - Aug 2024</span>
+                            </div>
+                            <p class="project">Project: AGV Tec at Tecnológico de Monterrey, Campus Puebla</p>
+                            <ul>
+                                <li>Analysis of requirements and design of PCB boards for multiple ECUs</li>
+                                <li>Embedded Systems Programming for control and communication using CAN Bus Networks</li>
+                                <li>Design, Fabrication, and Connection of ECU PCBs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="content">
+                            <div class="content-header">
+                                <h3>High School Professor</h3>
+                                <span class="date-badge">Aug - Dec 2023</span>
+                            </div>
+                            <p><strong>Course:</strong> "An Approach to Engineering" for Fifth Semester students at Prepa Tec de Monterrey</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="content">
+                            <div class="content-header">
+                                <h3>Technical Internship</h3>
+                                <span class="date-badge">Summer 2020</span>
+                            </div>
+                            <ul>
+                                <li>Preparation of development environments with Linux distributions (RedHatOS, CentOS, Ubuntu)</li>
+                                <li>Testing, Revision, and Update of processes described in technical reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="activities" class="section half-width">
+                <div class="container">
+                    <h2><i class="fas fa-medal"></i> Co-Curricular Activities</h2>
+                    
+                    <div class="activities-category">
+                        <h3>Organizing Committee Member</h3>
+                        <div class="activities-cards">
+                            <div class="activity-card">ISEM2022 Congress</div>
+                            <div class="activity-card">IDEEA 2022 Forum</div>
+                            <div class="activity-card">First Robotics Competition Puebla 2023</div>
+                            <div class="activity-card">Mechatronics Grand Prix 2024</div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-category">
+                        <h3>Competitions</h3>
+                        <div class="achievements-cards">
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-trophy gold"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <span class="achievement-award">1st Place Regional, 3rd Place National</span>
+                                    <span class="achievement-event">SIEMENS LOGO! Challenge</span>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-trophy gold"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <span class="achievement-award">National Finalist</span>
+                                    <span class="achievement-event">Act In Space Hackathon 2022</span>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-trophy gold"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <span class="achievement-award">1st Place</span>
+                                    <span class="achievement-event">Expoingenierías 2022 edition</span>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-trophy gold"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <span class="achievement-award">Finalist</span>
+                                    <span class="achievement-event">Electrohack 2024 (Puebla)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-category">
+                        <h3>Academic Contributions</h3>
+                        <div class="activities-cards">
+                            <div class="activity-card">
+                                <i class="fas fa-book"></i>
+                                <div class="activity-content">
+                                    <span class="activity-role">Tutor</span>
+                                    <span class="activity-details">Four tetramesters at PrepaNet (Math & Physics)</span>
+                                </div>
+                            </div>
+                            <div class="activity-card">
+                                <i class="fas fa-medal"></i>
+                                <div class="activity-content">
+                                    <span class="activity-role">Voluntary Evaluator</span>
+                                    <span class="activity-details">Final Assessment of IMT/BME Graduates</span>
+                                </div>
+                            </div>
+                            <div class="activity-card">
+                                <i class="fas fa-book-open"></i>
+                                <div class="activity-content">
+                                    <span class="activity-role">Autumn School</span>
+                                    <span class="activity-details">Sistemas Dinámicos, Control y sus Aplicaciones</span>
+                                </div>
+                            </div>
+                            <div class="activity-card">
+                                <i class="fas fa-flask"></i>
+                                <div class="activity-content">
+                                    <span class="activity-role">Research Leadership</span>
+                                    <span class="activity-details">Team leader for AMR research group</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sebastiandelat@hotmail.com">sebastiandelat@hotmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/juliosdelatrinidadr" target="_blank">linkedin.com/in/juliosdelatrinidadr</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/JulesDeLaT-ITESM" target="_blank">github.com/JulesDeLaT-ITESM</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Julio Sebastián De La Trinidad Rendón. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/publications-data.js"></script>
+    <script src="js/publications.js"></script>
+    <script>
+        // Generate particles
+        window.onload = function() {
+            const particles = document.querySelector('.particles');
+            const numParticles = 20;
+            
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.width = `${Math.random() * 8 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.opacity = `${Math.random() * 0.3 + 0.1}`;
+                particle.style.animationDuration = `${Math.random() * 8 + 5}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particles.appendChild(particle);
+            }
+            
+            // Interactive effect for particles
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                document.querySelectorAll('.particle').forEach(particle => {
+                    particle.style.transform = `translate(${(mouseX - 0.5) * 20}px, ${(mouseY - 0.5) * 20}px)`;
+                });
+            });
+        };
+    </script>
+</body>
+</html>
