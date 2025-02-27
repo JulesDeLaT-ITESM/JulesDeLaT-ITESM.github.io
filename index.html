@@ -246,17 +246,80 @@
             display: inline-flex;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            user-select: none; /* Make text non-selectable */
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE/Edge */
+            -moz-user-select: none; /* Firefox */
+            cursor: pointer; /* Show pointer cursor to indicate clickability */
+            transition: all 0.3s ease;
+            position: relative; /* Allow absolutely positioning the dot/counter */
+            min-height: 36px; /* Maintain minimum height to prevent layout shifts */
+            min-width: 150px; /* Minimum width to reduce layout shifts */
+        }
+        
+        /* Create a container for both dot and counter to ensure same position */
+        .status-indicator {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            margin-right: 8px;
         }
         
         .status::before {
             content: '';
-            display: inline-block;
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
             width: 8px;
             height: 8px;
             border-radius: 50%;
             background-color: #38a169; /* Green dot */
-            margin-right: 8px;
             animation: pulse 2s infinite;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Style for the click counter */
+        .click-counter {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #805AD5; /* Purple background for counter */
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 2;
+        }
+        
+        /* Show counter on hover when active */
+        .status:hover .click-counter.active {
+            opacity: 1;
+        }
+        
+        /* Hide dot when counter is shown */
+        .status:hover.counting::before {
+            opacity: 0;
+        }
+        
+        /* Class for Easter egg activated status */
+        .status.easter-egg::before {
+            background-color: #805AD5; /* Purple dot for Easter egg */
+            animation: fastPulse 0.8s infinite;
+        }
+        
+        @keyframes fastPulse {
+            0% { opacity: 0.6; transform: translateY(-50%) scale(0.8); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+            100% { opacity: 0.6; transform: translateY(-50%) scale(0.8); }
         }
         
         /* Footer to match header */
@@ -757,6 +820,283 @@
             padding: 1.5rem 0;
             margin-top: 2rem;
         }
+
+        /* Side-by-side container for two-column layout */
+        .side-by-side-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        
+        .half-width {
+            width: 100%;
+            margin: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .half-width {
+                width: calc(50% - 1rem);
+                flex: 1;
+            }
+        }
+        
+        /* Added styling for education items */
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        
+        .date-badge {
+            background: #e2e8f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        /* Status styling - simpler approach */
+        .status {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            color: #4ade80;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Standard dot style - simpler positioning */
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #4ade80;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Easter egg activated dot style */
+        .easter-egg .status-dot {
+            background-color: #805AD5; /* Purple dot */
+            animation: fastPulse 0.8s infinite;
+        }
+        
+        @keyframes fastPulse {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.6; }
+        }
+        
+        /* Status styling - improved consistency */
+        .status {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            color: #4ade80;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Standard dot style - fixed dimensions */
+        .status-dot, .status-counter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            border-radius: 50%;
+            flex-shrink: 0; /* Prevent size changes */
+            transition: opacity 0.3s ease;
+        }
+        
+        .status-dot {
+            background-color: #4ade80;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-counter {
+            background-color: #4ade80; /* Changed from purple to green */
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            opacity: 0; /* Start invisible */
+        }
+        
+        .status-counter.visible {
+            opacity: 1; /* Fade in when visible class is added */
+        }
+        
+        /* Easter egg activated dot style */
+        .easter-egg .status-dot {
+            background-color: #22c55e; /* Changed from purple to dark green */
+            animation: fastPulse 0.8s infinite;
+        }
+        
+        @keyframes fastPulse {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.6; }
+        }
+        
+        /* Fix layout of status-social-wrapper to prevent shifting */
+        .status-social-wrapper {
+            display: flex;
+            justify-content: space-between; /* Push items to opposite ends */
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        
+        .social-cv-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto; /* Push to the right */
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+        
+        /* Status styling - cleaned up to use just the original dot */
+        .status {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            color: #4ade80;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* For dot positioning */
+        }
+        
+        /* Original dot style using pseudo-element */
+        .status::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #4ade80;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.6; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.6; transform: scale(0.8); }
+        }
+        
+        /* Easter egg activation - only changes the original dot */
+        .status.easter-egg::before {
+            background-color: #22c55e;
+            animation: fastPulse 0.8s infinite;
+        }
+        
+        @keyframes fastPulse {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.6; }
+        }
+        
+        /* Remove all other dot/counter styles that are causing duplicates */
+
+        /* Status styling - fixed dot alignment */
+        .status {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 0.5rem 1.2rem 0.5rem 2.2rem; /* Add left padding for the dot */
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            color: #4ade80;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* For dot positioning */
+        }
+        
+        /* Fixed dot positioning */
+        .status::before {
+            content: '';
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #4ade80;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.6; transform: translateY(-50%) scale(0.8); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1); }
+            100% { opacity: 0.6; transform: translateY(-50%) scale(0.8); }
+        }
+        
+        /* Easter egg activation with correct positioning */
+        .status.easter-egg::before {
+            background-color: #22c55e;
+            animation: fastPulse 0.8s infinite;
+        }
+        
+        @keyframes fastPulse {
+            0% { opacity: 0.6; transform: translateY(-50%) scale(0.8); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+            100% { opacity: 0.6; transform: translateY(-50%) scale(0.8); }
+        }
     </style>
 </head>
 <body>
@@ -879,7 +1219,6 @@
         <section id="projects" class="section">
             <div class="container">
                 <h2><i class="fas fa-rocket"></i> Projects</h2>
-                
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
@@ -929,6 +1268,16 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+        <div class="side-by-side-container">
+            <section id="education" class="section half-width">
+                <div class="container">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <div class="content">
+                            <div class="content-header">
                                 <h3>PhD in Engineering Sciences</h3>
                                 <span class="date-badge">2024 - 2028</span>
                             </div>
@@ -974,7 +1323,7 @@
                         <div class="cert-item"><i class="fas fa-certificate"></i> <strong>SolidWorks Certified Professional</strong> in Mechanical Design <em>(C-LMXVT7AGP6)</em></div>
                         <div class="cert-item"><i class="fas fa-robot"></i> <strong>Universal Robots A/S:</strong> Basic, Professional, and Application track in e-Series</div>
                         <div class="cert-item"><i class="fas fa-brain"></i> <strong>Certified IBM Enterprise Design Thinking Practitioner</strong> and Team Essentials for AI</div>
-                        <div class="cert-item"><i class="fab fa-aws"></i> <strong>AWS Certified Pro DeepRacer</strong></div>
+                        <div class="cert-item"><i class="fab fa-aws"></i> <strong>AWS Certified Pro DeepRacer</strong> Top 5 Regional Racer</div>
                         <div class="cert-item"><i class="fab fa-microsoft"></i> <strong>Azure Machine Learning Learning Path:</strong> Build and operate machine learning solutions</div>
                         <div class="cert-item"><i class="fas fa-certificate"></i> <strong>IBM SkillsBuild Certifications:</strong> AI Foundation, Project Management Fundamentals, Blockchain Fundamentals</div>
                     </div>
@@ -1174,24 +1523,73 @@
             
             // Cycle through emojis with smooth jump animation
             setInterval(() => {
-                // Apply the jump animation
                 emojiContainer.classList.add('jump');
-                
-                // Wait for animation to reach its midpoint before changing emoji
                 setTimeout(() => {
-                    // Update emoji at the animation's highest point
                     currentEmojiIndex = (currentEmojiIndex + 1) % engineeringEmojis.length;
                     emojiContainer.textContent = engineeringEmojis[currentEmojiIndex];
-                }, 300); // Half of the animation duration
-                
-                // Remove animation class after completion
+                }, 300);
                 setTimeout(() => {
                     emojiContainer.classList.remove('jump');
-                }, 600); // Full animation duration
+                }, 600);
+            }, 4000);
+            
+            // Simplified Easter egg using only the original dot
+            const statusElement = document.querySelector('.status');
+            const originalText = statusElement.textContent;
+            let clickCount = 0;
+            
+            // Array of quirky alternative status messages
+            const quirkySayings = [
+                "Applying Bayesian optimization to life decisions.",
+                "Trying to get my neural network to spike responsibly.",
+                "Simulating reality until it breaks (or I do).",
+                "Upgrading from 'Master' to 'Doctor'—loading 42%...",
+                "Summoning eldritch knowledge… or just Googling.",
+                "Quest: Attain PhD | Current Objective: Survive.",
+                "Int 18, Wis 8, Con 3—send coffee.",
+                "Debugging my life one breakpoint at a time.",
+                "Rolling initiative against deadlines.",
+                "Currently in a recursive loop of literature review.",
+                "Experimenting with reality… results pending peer review.",
+                "If at first you don't succeed… redefine success metrics."
+            ];
+            
+            // Add click event listener
+            statusElement.addEventListener('click', function() {
+                clickCount++;
                 
-            }, 4000); // Interval between animations
+                // After 5 clicks, show a random quirky message
+                if (clickCount === 5) {
+                    // Select random message from array
+                    const randomIndex = Math.floor(Math.random() * quirkySayings.length);
+                    
+                    // Apply Easter egg class for pulsing dot
+                    statusElement.classList.add('easter-egg');
+                    
+                    // Change the text with a small animation
+                    statusElement.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        // Replace text
+                        statusElement.textContent = quirkySayings[randomIndex];
+                        // The pseudo-element dot will be preserved automatically
+                        statusElement.style.transform = 'scale(1)';
+                    }, 200);
+                    
+                    // Reset click counter
+                    clickCount = 0;
+                    
+                    // Restore original text after 5 seconds
+                    setTimeout(() => {
+                        statusElement.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            statusElement.textContent = originalText;
+                            statusElement.classList.remove('easter-egg');
+                            statusElement.style.transform = 'scale(1)';
+                        }, 200);
+                    }, 5000);
+                }
+            });
         };
     </script>
 </body>
 </html>
- 
