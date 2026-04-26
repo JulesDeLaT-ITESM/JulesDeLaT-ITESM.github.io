@@ -1,11 +1,27 @@
 
 
+# Julio Sebastián De La Trinidad Rendón
 
+Static personal academic website for GitHub Pages.
 
+## Structure
 
+- `index.html` contains the page content.
+- `css/style.css` contains the site styling.
+- `js/script.js` handles active navigation state.
+- `images/` contains profile and project images.
+- `assets/cv/JulioDeLatrinidad_CV.pdf` is the downloadable CV.
 
+## Local Preview
 
+Run a local static server from the repository root:
 
+```powershell
+python -m http.server 8000
+```
 
+Then open `http://localhost:8000`.
 
-This method works for basic viewing but doesn't simulate a server environment.3. The website will open in your default web browser2. Double-click on `index.html`1. Navigate to your project folder in File Explorer### Simple method:## Viewing the website locally# Local Development Guide
+## Deploy
+
+Push changes to `main`. The GitHub Actions workflow in `.github/workflows/pages.yml` uploads the repository root as a GitHub Pages artifact and deploys it.
